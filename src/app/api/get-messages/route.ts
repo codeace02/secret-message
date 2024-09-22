@@ -74,5 +74,14 @@ export async function GET(request: Request) {
     } catch (error) {
         console.log('error', error)
 
+        return Response.json(
+            {
+                success: false,
+                message: "Unauthenticated!"
+            },
+            {
+                status: 500 //forbidden status
+            }
+        )
     }
 }
